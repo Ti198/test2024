@@ -1,7 +1,10 @@
 import java.io.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.regex.PatternSyntaxException;
+import java.io.BufferedWriter;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -10,7 +13,7 @@ public class Main {
 
         int vowelCount = 0;
         int consonantCount = 0;
-        Pattern vowelPattern = Pattern.compile("[aеёиоуыэюяAEЁИОУЭЮЯ]");
+        Pattern vowelPattern = Pattern.compile("[еёиоуыэюяEЁИОУЭЮЯ]");
         Pattern consonantPattern = Pattern.compile("[бвгджзйклнпрстфхцчшщъьБBГДЖЗИКЛНПРСТФХЦЧШЩ]");
 
         try (BufferedReader reader = new BufferedReader(new FileReader(inputFilePath));
